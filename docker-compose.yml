@@ -1,0 +1,15 @@
+# Local development database. These credentials are throwaway defaults.
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: maine
+      POSTGRES_PASSWORD: maine
+      POSTGRES_DB: maine_elections
+    ports:
+      - "5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:

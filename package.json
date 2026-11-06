@@ -1,0 +1,16 @@
+{
+  "name": "maine-elections-visualizer",
+  "private": true,
+  "description": "Interactive town-level map of Maine election results",
+  "license": "MIT",
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client",
+    "start": "concurrently --names server,client \"npm run server\" \"npm run client\"",
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "db:seed": "npm run seed --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
